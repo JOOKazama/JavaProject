@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerBuy">
+   <children>
+      <Label layoutX="20.0" layoutY="84.0" text="ID of client:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfield1" layoutX="121.0" layoutY="85.0" promptText="Enter ID" />
+      <Label layoutX="20.0" layoutY="129.0" text="Name of a stock:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="173.0" text="Quantity:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="215.0" text="Date of purchase:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfield2" layoutX="165.0" layoutY="130.0" promptText="Enter name" />
+      <TextField fx:id="tfield3" layoutX="97.0" layoutY="175.0" promptText="Enter quantity" />
+      <TextField fx:id="tfield4" layoutX="165.0" layoutY="216.0" promptText="Enter date" />
+      <Label fx:id="ls" layoutX="73.0" layoutY="35.0" text="Buy from the warehouse:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="buy" layoutX="147.0" layoutY="304.0" mnemonicParsing="false" onAction="#buy1" text="Create" />
+      <Label layoutX="18.0" layoutY="253.0" text="Price:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfield5" layoutX="73.0" layoutY="254.0" promptText="Enter price" />
+   </children>
+</AnchorPane>

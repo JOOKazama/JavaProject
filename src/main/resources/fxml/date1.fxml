@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="327.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerDate1">
+      <children>
+            <Label layoutX="20.0" layoutY="30.0" text="Choose a period from: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="date1" layoutX="213.0" layoutY="31.0" />
+            <Label layoutX="372.0" layoutY="30.0" text="to">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="date2" layoutX="402.0" layoutY="31.0" />
+      <Button fx:id="but" layoutX="562.0" layoutY="31.0" mnemonicParsing="false" onAction="#showw" text="Show" />
+      <ListView fx:id="lv" layoutX="17.0" layoutY="81.0" prefHeight="213.0" prefWidth="592.0" />
+      </children>
+    </AnchorPane>
