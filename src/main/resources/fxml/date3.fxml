@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="346.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerDate3">
+      <children>
+            <Label layoutX="20.0" layoutY="30.0" text="Choose a period from: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="375.0" layoutY="31.0" text="to">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+      <Button fx:id="but" layoutX="571.0" layoutY="32.0" mnemonicParsing="false" onAction="#showw" text="Show" />
+      <DatePicker fx:id="date1" layoutX="208.0" layoutY="32.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter an start..." />
+      <DatePicker fx:id="date2" layoutX="400.0" layoutY="32.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter an end..." />
+      <TableView fx:id="table" layoutX="20.0" layoutY="75.0" prefHeight="211.0" prefWidth="599.0">
+        <columns>
+          <TableColumn fx:id="date" prefWidth="302.0" text="Date" />
+          <TableColumn fx:id="money" prefWidth="296.0" text="Money" />
+        </columns>
+      </TableView>
+      <TextField fx:id="search" layoutX="20.0" layoutY="297.0" prefHeight="25.0" prefWidth="599.0" promptText="Search from the results..." />
+      </children>
+    </AnchorPane>

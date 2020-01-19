@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="484.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerNomCl">
+
+    <TableView fx:id="table" layoutX="28.0" layoutY="68.0" prefHeight="353.0" prefWidth="526.0">
+        <columns>
+            <TableColumn fx:id="id" prefWidth="41.0" text="ID" />
+            <TableColumn fx:id="first" prefWidth="119.0" text="FirstName" />
+            <TableColumn fx:id="middle" prefWidth="109.0" text="MiddleName" />
+            <TableColumn fx:id="last" prefWidth="82.0" text="LastName" />
+            <TableColumn fx:id="company" minWidth="7.0" prefWidth="99.0" text="CompanyName" />
+            <TableColumn fx:id="vat" prefWidth="75.0" text="VatNumber" />
+        </columns>
+    </TableView>
+   <Label layoutX="28.0" layoutY="22.0" text="List of clients:">
+      <font>
+         <Font name="System Bold Italic" size="18.0" />
+      </font>
+   </Label>
+   <TextField fx:id="search" layoutX="28.0" layoutY="436.0" prefHeight="25.0" prefWidth="526.0" promptText="Search from the results..." />
+</AnchorPane>
