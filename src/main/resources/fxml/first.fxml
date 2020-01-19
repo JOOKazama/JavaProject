@@ -4,14 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" depthTest="DISABLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerFirst">
-   <children>
-      <Button fx:id="button" layoutX="102.0" layoutY="166.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="25.0" prefWidth="91.0" text="Login" />
+<AnchorPane depthTest="DISABLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerFirst">
+      <Button layoutX="102.0" layoutY="166.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="25.0" prefWidth="91.0" text="Login" />
       <TextField fx:id="username" layoutX="102.0" layoutY="81.0" promptText="Enter username" />
       <Label layoutX="34.0" layoutY="124.0" text="Password">
          <font>
@@ -28,5 +25,4 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-   </children>
 </AnchorPane>

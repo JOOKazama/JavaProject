@@ -1,4 +1,4 @@
-package sample;
+package sample.Tables;
 
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.GenericGenerator;

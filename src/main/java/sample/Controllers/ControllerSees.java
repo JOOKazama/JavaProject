@@ -1,5 +1,4 @@
-package sample;
-
+package sample.Controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+import sample.Tables.Products;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,9 +30,9 @@ public class ControllerSees implements Initializable
         Query qry = session.createQuery("from Products where stock>0");
         ObservableList l = FXCollections.observableArrayList(qry.list());
 
-        name.setCellValueFactory(new PropertyValueFactory<Products, String>("name"));
-        price.setCellValueFactory(new PropertyValueFactory<Products, Double>("price"));
-        stock.setCellValueFactory(new PropertyValueFactory<Products, Integer>("stock"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
+        stock.setCellValueFactory(new PropertyValueFactory<>("stock"));
         table.getItems().addAll(l);
         session.close(); factory.close();
     }

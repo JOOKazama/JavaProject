@@ -3,25 +3,24 @@
 
 <hibernate-configuration>
     <session-factory>
-
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">ED6464</property>
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">validate</property>
-        <mapping class="sample.Bank"/>
-        <mapping class="sample.CashDesks"/>
-        <mapping class="sample.Clients"/>
-        <mapping class="sample.Deliveries"/>
-        <mapping class="sample.ProductDeliveries"/>
-        <mapping class="sample.Products"/>
-        <mapping class="sample.ProductSales"/>
-        <mapping class="sample.ProviderProducts"/>
-        <mapping class="sample.Providers"/>
-        <mapping class="sample.Roles"/>
-        <mapping class="sample.Sales"/>
-        <mapping class="sample.Users"/>
-
+        <mapping class="sample.Tables.Bank"/>
+        <mapping class="sample.Tables.CashDesks"/>
+        <mapping class="sample.Tables.CashDesks1"/>
+        <mapping class="sample.Tables.Clients"/>
+        <mapping class="sample.Tables.Deliveries"/>
+        <mapping class="sample.Tables.ProductDeliveries"/>
+        <mapping class="sample.Tables.Products"/>
+        <mapping class="sample.Tables.ProductSales"/>
+        <mapping class="sample.Tables.ProviderProducts"/>
+        <mapping class="sample.Tables.Providers"/>
+        <mapping class="sample.Tables.Roles"/>
+        <mapping class="sample.Tables.Sales"/>
+        <mapping class="sample.Tables.Users"/>
     </session-factory>
 </hibernate-configuration>

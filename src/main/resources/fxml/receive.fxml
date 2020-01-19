@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerReceive">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerReceive">
    <children>
       <Label layoutX="20.0" layoutY="83.0" text="ID of provider:">
          <font>
@@ -35,7 +35,6 @@
       <TextField fx:id="textf2" layoutX="178.0" layoutY="130.0" promptText="Enter name" />
       <TextField fx:id="textf3" layoutX="274.0" layoutY="173.0" promptText="Enter delivery price" />
       <TextField fx:id="textf5" layoutX="104.0" layoutY="259.0" promptText="Enter quantity" />
-      <TextField fx:id="textf6" layoutX="165.0" layoutY="307.0" promptText="Enter date" />
       <Label layoutX="135.0" layoutY="39.0" text="Create a delivery:">
          <font>
             <Font size="18.0" />
@@ -48,5 +47,6 @@
          </font>
       </Label>
       <TextField fx:id="textf4" layoutX="246.0" layoutY="219.0" promptText="Enter sale price" />
+      <DatePicker fx:id="dp" layoutX="172.0" layoutY="307.0" promptText="Enter a date" />
    </children>
 </AnchorPane>

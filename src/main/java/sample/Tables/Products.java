@@ -1,4 +1,4 @@
-package sample;
+package sample.Tables;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.persistence.Column;
