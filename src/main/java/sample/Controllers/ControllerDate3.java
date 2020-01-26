@@ -11,7 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import sample.Tables.D3;
+import sample.Inq.D3;
 import java.util.List;
 import java.util.function.Predicate;
 

@@ -1,8 +1,6 @@
 package sample.Tables;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
-
 import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.*;

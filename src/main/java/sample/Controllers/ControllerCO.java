@@ -5,7 +5,9 @@ import javafx.scene.control.TextField;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 import sample.Tables.Users;
+import java.util.List;
 
 public class ControllerCO
 {
@@ -36,10 +38,21 @@ public class ControllerCO
             }
             else
             {
-                Configuration cfg = new Configuration();
-                cfg.configure("hibernate.cfg.xml");
-                SessionFactory factory = cfg.buildSessionFactory();
-                Session session = factory.openSession();
+                Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
+                SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
+
+                Query qry = session.createQuery("select username from Users"); List<String> r = qry.getResultList();
+
+                for(int i=0; i<r.size(); i++)
+                {
+                    if(r.get(i).equals(tf5.getText()))
+                    {
+                        errorAlert.setHeaderText("Error!");
+                        errorAlert.setContentText("There is an operator with that username!");
+                        errorAlert.showAndWait();
+                        return;
+                    }
+                }
 
                 Users u = new Users();
                 u.setFname(tf2.getText());
@@ -59,13 +72,6 @@ public class ControllerCO
                 errorAlert.showAndWait();
             }
         }
-        catch (Exception e)
-        {
-            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Error!");
-            errorAlert.setContentText("The input is invalid. Try again.");
-            errorAlert.showAndWait();
-            e.printStackTrace();
-        }
+        catch (Exception e) { e.printStackTrace(); }
     }
 }

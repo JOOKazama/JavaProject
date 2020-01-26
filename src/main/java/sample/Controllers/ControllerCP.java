@@ -39,10 +39,8 @@ public class ControllerCP
             }
             else
             {
-                Configuration cfg = new Configuration();
-                cfg.configure("hibernate.cfg.xml");
-                SessionFactory factory = cfg.buildSessionFactory();
-                Session session = factory.openSession();
+                Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
+                SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
 
                 Providers u1 = new Providers();
                 u1.setFname(tf22.getText());

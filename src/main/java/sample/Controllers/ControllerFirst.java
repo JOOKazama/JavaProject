@@ -14,16 +14,18 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+import sample.Tables.Bank;
 import sample.Tables.Users;
-
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ControllerFirst extends Application
 {
     static Stage pr=new Stage();
     static Stage admin=new Stage();
     static Stage operator=new Stage();
-
+    private static Logger logger= LogManager.getLogger(ControllerFirst.class.getName());
 
     @Override public void start(Stage primstage) throws Exception
     {
@@ -60,12 +62,18 @@ public class ControllerFirst extends Application
             }
             else
             {
-                Configuration cfg = new Configuration();
-                cfg.configure("hibernate.cfg.xml");
+                Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
                 SessionFactory factory = cfg.buildSessionFactory();
                 Session session = factory.openSession();
-                Query qry = session.createQuery("from Users");
-                List l = qry.list();
+                Query qry = session.createQuery("from Users"); List l = qry.list();
+                Query qry1 = session.createQuery("from Products where stock>0"); List l1 = qry1.list();
+                Bank b = session.get(Bank.class, 1);
+
+                if(b.getFunds()==0) { logger.info("No funds in the bank!"); }
+                else if(b.getFunds()<=100) { logger.warn("Critical minimum of funds in the bank!"); }
+
+                if(l1.isEmpty()) { logger.warn("No products in the warehouse!"); }
+                else if(l1.size()<=2) { logger.warn("Critical minimum of products in the warehouse!"); }
 
                 for (int i = 0; i < l.size(); i++)
                 {
@@ -77,7 +85,6 @@ public class ControllerFirst extends Application
                         admin.setResizable(false);
                         admin.setTitle("Main window for admin");
                         admin.setScene(new Scene(root, 1000, 600)); admin.show();
-
                     }
                     else if (((Users) l.get(i)).getId() > 1 && ((Users) l.get(i)).getUsername().equals(username.getText()) && ((Users) l.get(i)).getPassword().equals(password.getText()))
                     {

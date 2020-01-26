@@ -1,4 +1,4 @@
-package sample.Tables;
+package sample.Inq;
 
 public class D2
 {

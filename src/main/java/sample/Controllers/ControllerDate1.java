@@ -11,7 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import sample.Tables.D1;
+import sample.Inq.D1;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -39,13 +39,10 @@ public class ControllerDate1
             }
             else
             {
-                Configuration cfg = new Configuration();
-                cfg.configure("hibernate.cfg.xml");
-                SessionFactory factory = cfg.buildSessionFactory();
-                Session session = factory.openSession();
+                Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
+                SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
 
-                table.getItems().clear();
-                table.refresh();
+                table.getItems().clear(); table.refresh();
 
                 Query qry = session.createQuery("SELECT e.date, p.fname, p.mname, p.lname FROM Deliveries e inner join Providers p on e.providerid=p.id where e.date between :d1 and :d2");
                 qry.setParameter("d1", java.sql.Date.valueOf(date1.getValue()));

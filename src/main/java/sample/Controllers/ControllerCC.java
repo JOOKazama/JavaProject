@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import sample.Tables.Clients;
-
 import java.util.regex.Pattern;
 
 public class ControllerCC
