@@ -30,10 +30,8 @@ public class ControllerBuy
     {
         try
         {
-            Configuration cfg = new Configuration();
-            cfg.configure("hibernate.cfg.xml");
-            SessionFactory factory = cfg.buildSessionFactory();
-            Session session = factory.openSession();
+            Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
+            SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
 
             Query qry = session.createQuery("from Products where stock>0"); List l = qry.list();
             Query qryif = session.createQuery("select p.id from Clients p"); List lif = qryif.list();
@@ -42,11 +40,6 @@ public class ControllerBuy
             ProductSales aa = new ProductSales();
             CashDesks1 a4 = new CashDesks1();
             Products p; session.beginTransaction();
-
-            Query qry2 = session.createQuery("from Products where price=:a and name=:aa and stock>0");
-            qry2.setParameter("a", Double.parseDouble(tfield5.getText()));
-            qry2.setParameter("aa", tfield2.getText());
-            List l2 = qry2.list();
 
             if (tfield1.getText().equals("") || tfield2.getText().equals("") || tfield3.getText().equals("") || tfield5.getText().equals(""))
             {
@@ -87,7 +80,7 @@ public class ControllerBuy
             else if (!pattern.matcher(tfield3.getText()).matches())
             {
                 errorAlert.setHeaderText("Error!");
-                errorAlert.setContentText("Please enter a valid  Quantity number!");
+                errorAlert.setContentText("Please enter a valid Quantity number!");
                 errorAlert.showAndWait();
             }
             else if (Integer.parseInt(tfield3.getText()) <= 0 || Integer.parseInt(tfield3.getText()) > 30)
@@ -96,14 +89,20 @@ public class ControllerBuy
                 errorAlert.setContentText("Please enter a valid  Quantity (from 1 to 30)!");
                 errorAlert.showAndWait();
             }
-            else if (l2.isEmpty())
-            {
-                errorAlert.setHeaderText("Error!");
-                errorAlert.setContentText("No such Product exists!");
-                errorAlert.showAndWait();
-            }
             else
             {
+                Query qry2 = session.createQuery("from Products where price=:a and name=:aa and stock>0");
+                qry2.setParameter("a", Double.parseDouble(tfield5.getText()));
+                qry2.setParameter("aa", tfield2.getText()); List l2 = qry2.list();
+
+                if (l2.isEmpty())
+                {
+                    errorAlert.setHeaderText("Error!");
+                    errorAlert.setContentText("No such Product exists!");
+                    errorAlert.showAndWait();
+                    return;
+                }
+
                 p = (Products) l2.get(0);
                 for (int i = 0; i < l.size(); i++)
                 {
@@ -166,8 +165,7 @@ public class ControllerBuy
                     session.getTransaction().commit();
                     session.close();
 
-                    Session session1 = factory.openSession();
-                    session1.beginTransaction();
+                    Session session1 = factory.openSession(); session1.beginTransaction();
 
                     Query sales1 = session1.createQuery("from Sales");
                     List sales11 = sales1.list();
@@ -184,8 +182,8 @@ public class ControllerBuy
                     aa.setSaleId((((Sales) sales11.get(sales11.size() - 1)).getId()));
                     session1.save(aa);
 
-                    session1.close();
-                    factory.close();
+                    session1.close(); factory.close();
+
                     Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
                     errorAlert.setHeaderText("Success!");
                     errorAlert.setContentText("Successfully bought an Product!");

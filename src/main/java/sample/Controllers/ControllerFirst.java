@@ -63,8 +63,8 @@ public class ControllerFirst extends Application
             else
             {
                 Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
-                SessionFactory factory = cfg.buildSessionFactory();
-                Session session = factory.openSession();
+                SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
+
                 Query qry = session.createQuery("from Users"); List l = qry.list();
                 Query qry1 = session.createQuery("from Products where stock>0"); List l1 = qry1.list();
                 Bank b = session.get(Bank.class, 1);

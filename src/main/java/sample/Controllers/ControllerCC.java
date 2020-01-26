@@ -39,8 +39,7 @@ public class ControllerCC
             else
             {
                 Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
-                SessionFactory factory = cfg.buildSessionFactory();
-                Session session = factory.openSession();
+                SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
 
                 Clients u11 = new Clients();
                 u11.setFname(tf222.getText());

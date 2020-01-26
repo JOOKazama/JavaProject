@@ -38,13 +38,10 @@ public class ControllerDate5
             }
             else
             {
-                Configuration cfg = new Configuration();
-                cfg.configure("hibernate.cfg.xml");
-                SessionFactory factory = cfg.buildSessionFactory();
-                Session session = factory.openSession();
+                Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
+                SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
 
-                table.getItems().clear();
-                table.refresh();
+                table.getItems().clear(); table.refresh();
 
                 Query qry = session.createQuery("SELECT e.name, m.deliveryprice FROM Products e inner join ProductDeliveries m on e.id=m.productid inner join Deliveries o on o.id=m.deliveryid where o.date between :d1 and :d2");
                 qry.setParameter("d1", java.sql.Date.valueOf(date1.getValue()));

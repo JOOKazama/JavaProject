@@ -42,10 +42,8 @@ public class ControllerCB
             }
             else
             {
-                Configuration cfg = new Configuration();
-                cfg.configure("hibernate.cfg.xml");
-                SessionFactory factory = cfg.buildSessionFactory();
-                Session session = factory.openSession();
+                Configuration cfg = new Configuration(); cfg.configure("hibernate.cfg.xml");
+                SessionFactory factory = cfg.buildSessionFactory(); Session session = factory.openSession();
 
                 Bank f = new Bank();
                 f.setId(1);
