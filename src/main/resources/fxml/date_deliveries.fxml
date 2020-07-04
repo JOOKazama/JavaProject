@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefWidth="644.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controllers.DateInquiries.ControllerDateDeliveries">
+
+    <Label layoutX="20.0" layoutY="30.0" text="Choose a period from: ">
+        <font> <Font size="18.0" /> </font>
+    </Label>
+
+    <Label layoutX="375.0" layoutY="31.0" text="to">
+        <font> <Font size="18.0" /> </font>
+    </Label>
+
+    <Button fx:id="button" layoutX="571.0" layoutY="32.0" mnemonicParsing="false" onAction="#show" text="Show"/>
+
+    <DatePicker fx:id="date1" layoutX="208.0" layoutY="32.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter an start..."/>
+    <DatePicker fx:id="date2" layoutX="400.0" layoutY="32.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter an end..."/>
+
+    <TextField fx:id="search" layoutX="16.0" layoutY="376.0" prefHeight="25.0" prefWidth="598.0" promptText="Search from the results..."/>
+
+    <TableView fx:id="table" layoutX="18.0" layoutY="87.0" prefHeight="269.0" prefWidth="598.0">
+        <columns>
+          <TableColumn fx:id="date" prefWidth="90.0" text="Date"/>
+          <TableColumn fx:id="first" prefWidth="157.0" text="First Name"/>
+          <TableColumn fx:id="middle" prefWidth="187.0" text="Middle Name"/>
+          <TableColumn fx:id="last" prefWidth="163.0" text="Last Name"/>
+        </columns>
+      </TableView>
+
+</AnchorPane>

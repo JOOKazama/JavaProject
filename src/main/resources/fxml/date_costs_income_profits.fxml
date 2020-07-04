@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="168.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controllers.DateInquiries.ControllerDateCIP">
+
+    <Label layoutX="20.0" layoutY="30.0" text="Choose a period from: ">
+        <font> <Font size="18.0"/> </font>
+    </Label>
+
+    <Label layoutX="375.0" layoutY="31.0" text="to">
+        <font> <Font size="18.0"/> </font>
+    </Label>
+
+    <Button fx:id="button" layoutX="571.0" layoutY="32.0" mnemonicParsing="false" onAction="#show" text="Show"/>
+
+    <DatePicker fx:id="date1" layoutX="208.0" layoutY="32.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter an start..."/>
+    <DatePicker fx:id="date2" layoutX="400.0" layoutY="32.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter an end..."/>
+
+    <ListView fx:id="list_view" layoutX="19.0" layoutY="75.0" prefHeight="75.0" prefWidth="596.0"/>
+
+</AnchorPane>

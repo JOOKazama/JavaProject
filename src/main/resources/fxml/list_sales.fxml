@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="421.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controllers.Operations.ControllerListSales">
+
+    <Label layoutX="18.0" layoutY="14.0" text="List of sales:">
+        <font> <Font name="System Bold Italic" size="18.0"/> </font>
+    </Label>
+
+    <TableView fx:id="table" layoutX="18.0" layoutY="56.0" prefHeight="296.0" prefWidth="564.0">
+      <columns>
+          <TableColumn prefWidth="75.0" text="ID" fx:id="id"/>
+          <TableColumn prefWidth="183.0" text="Client ID" fx:id="clientid"/>
+          <TableColumn prefWidth="305.0" text="Date" fx:id="date"/>
+      </columns>
+    </TableView>
+
+    <TextField fx:id="search" layoutX="18.0" layoutY="369.0" prefHeight="25.0" prefWidth="564.0" promptText="Search from the results..."/>
+
+</AnchorPane>

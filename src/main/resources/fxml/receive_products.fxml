@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controllers.Operations.ControllerReceiveProducts">
+
+   <Label layoutX="20.0" layoutY="83.0" text="ID of provider:">
+      <font> <Font size="18.0"/> </font>
+   </Label>
+
+   <TextField fx:id="id" layoutX="178.0" layoutY="85.0" promptText="Enter ID"/>
+
+   <Label layoutX="20.0" layoutY="129.0" text="Name of a stock:">
+      <font> <Font size="18.0"/> </font>
+   </Label>
+
+   <Label layoutX="20.0" layoutY="258.0" text="Quantity:">
+      <font> <Font size="18.0"/> </font>
+   </Label>
+
+   <Label layoutX="23.0" layoutY="306.0" text="Date of delivery:">
+      <font> <Font size="18.0"/> </font>
+   </Label>
+
+   <Label layoutX="20.0" layoutY="172.0" text="Delivery price of a single item:">
+      <font> <Font size="18.0"/> </font>
+   </Label>
+
+   <TextField fx:id="name" layoutX="178.0" layoutY="130.0" promptText="Enter name"/>
+   <TextField fx:id="delivery_price" layoutX="274.0" layoutY="173.0" promptText="Enter delivery price"/>
+   <TextField fx:id="quantity" layoutX="104.0" layoutY="259.0" promptText="Enter quantity"/>
+
+   <Label layoutX="135.0" layoutY="39.0" text="Create a delivery:">
+      <font> <Font size="18.0"/> </font>
+   </Label>
+
+   <Button fx:id="button_recieve" layoutX="178.0" layoutY="361.0" mnemonicParsing="false" onAction="#receive" text="Create"/>
+
+   <Label layoutX="23.0" layoutY="218.0" text="Sale price of a single item:">
+      <font> <Font size="18.0"/> </font>
+   </Label>
+
+   <TextField fx:id="sale_price" layoutX="246.0" layoutY="219.0" promptText="Enter sale price"/>
+
+   <DatePicker fx:id="date" layoutX="172.0" layoutY="307.0" promptText="Enter a date"/>
+
+</AnchorPane>

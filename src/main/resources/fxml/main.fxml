@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -8,80 +7,61 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerMain">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.GUI.ControllerMain">
     <SplitPane dividerPositions="0.2806236080178174" focusTraversable="true" VBox.vgrow="ALWAYS">
         <AnchorPane prefHeight="592.0" prefWidth="253.0">
                   <Button id="newbutton" layoutX="4.0" layoutY="223.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="241.0" text="Login as new operator or admin" />
                   <TabPane layoutX="4.0" layoutY="19.0" pickOnBounds="false" prefHeight="198.0" prefWidth="241.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
-                    <tabs>
-                      <Tab fx:id="cr" text="Create">
-                        <content>
+                  <cursor> <Cursor fx:constant="E_RESIZE"/> </cursor>
+                <effect> <Blend/> </effect>
+
+                      <Tab fx:id="table" text="Create">
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="168.0" prefWidth="207.0">
-                                 <children>
-                                    <RadioButton fx:id="c1" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#co" text="New operator" />
-                                    <RadioButton fx:id="c2" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#cp" text="New provider" />
-                                    <RadioButton fx:id="c3" layoutX="14.0" layoutY="92.0" mnemonicParsing="false" onAction="#cc" text="New client" />
-                                    <RadioButton fx:id="c4" layoutX="14.0" layoutY="121.0" mnemonicParsing="false" onAction="#cb" text="New bank" />
-                                 </children>
-                              </AnchorPane>
-                        </content>
+                              <RadioButton fx:id="create_operator" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#create_operator" text="New operator"/>
+                              <RadioButton fx:id="create_provider" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#create_provider" text="New provider"/>
+                              <RadioButton fx:id="create_client" layoutX="14.0" layoutY="92.0" mnemonicParsing="false" onAction="#create_client" text="New client"/>
+                              <RadioButton fx:id="create_bank" layoutX="14.0" layoutY="121.0" mnemonicParsing="false" onAction="#create_bank" text="New bank"/>
+                          </AnchorPane>
                       </Tab>
+
                       <Tab text="Operations">
-                        <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="208.0">
-                                 <children>
-                                    <RadioButton fx:id="o1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#sn" text="Nomenclatures" />
-                                    <RadioButton fx:id="o2" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#sp" text="Buy products from warehouse" />
-                                    <RadioButton fx:id="o3" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#rp" text="Receive products from provider" />
-                                    <RadioButton fx:id="o4" layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#sap" text="Show all products(sale price)" />
-                                    <RadioButton fx:id="o5" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#sw" text="Show the products in warehouse" />
-                                    <RadioButton fx:id="o6" layoutX="14.0" layoutY="133.0" mnemonicParsing="false" onAction="#sf" text="Show the funds in the bank" />
-                                 </children>
-                              </AnchorPane>
-                        </content>
+                              <RadioButton fx:id="nomenclatures" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#nomenclatures" text="Nomenclatures"/>
+                              <RadioButton fx:id="buy_products" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#buy_products" text="Buy products from warehouse"/>
+                              <RadioButton fx:id="receive_products" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#receive_products" text="Receive products from provider"/>
+                              <RadioButton fx:id="products_sale_price" layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#products_sale_price" text="Show all products(sale price)"/>
+                              <RadioButton fx:id="show_warehouse" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#show_warehouse" text="Show the products in warehouse"/>
+                              <RadioButton fx:id="funds" layoutX="14.0" layoutY="133.0" mnemonicParsing="false" onAction="#funds" text="Show the funds in the bank"/>
+                          </AnchorPane>
                       </Tab>
-                        <Tab text="Inquiries">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="208.0">
-                                 <children>
-                                    <RadioButton fx:id="i1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#dap" text="Deliveries and providers" />
-                                    <RadioButton fx:id="i2" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#cl" text="Clients" />
-                                    <RadioButton fx:id="i3" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#aop" text="Activity of operators" />
-                                    <RadioButton fx:id="i4" layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#pw" text="Products in warehouse" />
-                                    <RadioButton fx:id="i5" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#cip" text="Costs, income, profits" />
-                                    <RadioButton fx:id="i6" layoutX="14.0" layoutY="133.0" mnemonicParsing="false" onAction="#mov" text="Movement of the funds" />
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </Tab>
-                    </tabs>
-                     <cursor>
-                        <Cursor fx:constant="E_RESIZE" />
-                     </cursor>
-                     <effect>
-                        <Blend />
-                     </effect>
-                  </TabPane>
+
+                      <Tab text="Inquiries">
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="208.0">
+                              <RadioButton fx:id="deliveries" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#deliveries" text="Deliveries and providers"/>
+                              <RadioButton fx:id="clients" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#clients" text="Clients"/>
+                              <RadioButton fx:id="activity_operators" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#activity_operators" text="Activity of operators"/>
+                              <RadioButton fx:id="warehouse" layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#warehouse" text="Products in warehouse"/>
+                              <RadioButton fx:id="costs_income_profits" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#costs_income_profits" text="Costs, income, profits"/>
+                              <RadioButton fx:id="movement_funds" layoutX="14.0" layoutY="133.0" mnemonicParsing="false" onAction="#movement_funds" text="Movement of the funds"/>
+                          </AnchorPane>
+                      </Tab>
+            </TabPane>
         </AnchorPane>
-        <ScrollPane prefHeight="551.0" prefWidth="664.0">
-          <content>
-            <AnchorPane id="Content" fx:id="right" minHeight="-1.0" minWidth="-1.0" prefHeight="551.0" prefWidth="576.0">
-              <children>
-                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" wrapText="false">
-                           <font>
-                      <Font size="18.0" fx:id="x1" />
-                           </font>
-                           <textFill>
-                      <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
-                           </textFill></Label>
-              </children>
+
+        <ScrollPane prefHeight="540.0" prefWidth="588.0">
+            <AnchorPane id="Content" fx:id="right" prefHeight="551.0" prefWidth="576.0">
+
+                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER">
+                    <font> <Font size="18.0" fx:id="x1"/> </font>
+                    <textFill> <Color red="0.624" green="0.624" blue="0.624" fx:id="x2"/> </textFill>
+                </Label>
+
             </AnchorPane>
-          </content>
         </ScrollPane>
     </SplitPane>
+
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
-      <padding>
-        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-      </padding>
+      <padding> <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" /> </padding>
     </HBox>
+
 </VBox>
